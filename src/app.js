@@ -1,11 +1,47 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let sujeto = [
+  "Mi jefe",
+  "Mi vecino",
+  "Mi perro",
+  "Mi abuela",
+  "Mi hijo",
+  "El cartero",
+  "La profesora",
+  "Mi amigo",
+  "El gato",
+  "Un desconocido"
+];
+let accion = ["robó", "comió", "rompío", "quemó", "perdió", "mojó"];
+let objeto = [
+  "mi tarea",
+  "mi celular",
+  "mi informe",
+  "mis llaves",
+  "mi pantalon",
+  "mi computador"
+];
+let contexto = [
+  "esta mañana!",
+  "mientras dormía!",
+  "antes de la cita!",
+  "antes de la clase!",
+  "durante el almuerzo!"
+];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let sujetoRandom = Math.floor(Math.random() * sujeto.length);
+let accionRandom = Math.floor(Math.random() * accion.length);
+let objetoRandom = Math.floor(Math.random() * objeto.length);
+let contextoRandom = Math.floor(Math.random() * contexto.length);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+function excusaGenerada() {
+  return (
+    sujeto[sujetoRandom] +
+    " " +
+    accion[accionRandom] +
+    " " +
+    objeto[objetoRandom] +
+    " " +
+    contexto[contextoRandom]
+  );
+}
+
+document.querySelector("#excuse").innerHTML = excusaGenerada();
